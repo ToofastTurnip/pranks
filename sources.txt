@@ -1,0 +1,5 @@
+sources:
+
+1. Stuff I already knew
+2. https://www.greycampus.com/opencampus/ethical-hacking/types-of-sql-injection
+3. https://www.go4expert.com/articles/stealing-cookie-xss-t17066/
