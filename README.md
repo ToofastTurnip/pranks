@@ -82,3 +82,4 @@ The resulting log file should look something like the one in this repo.
 Sometimes (on poorly made websites) your session id will be displayed in plaintext in the URL.  If that's the case, then accessing somebody else's session is as easy as replacing yours with theirs.  If that's not the case, then you could use a tool like Firebug to edit your cookie.
 https://getfirebug.com/
 Add or modify all your cookie's fields to match the data from the cookie in your log file and refresh the page.  Now you're logged in as your victim!  Hooray!
+If you didn't already, then now you probably understand why web applications will sometimes require you to enter your password again before making changed to your account as this prevents the victim from being locked out of their own  account by a change that you make.
